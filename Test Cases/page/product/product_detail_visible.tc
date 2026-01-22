@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>product_detail_visible</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>9b40f7d1-a6df-438a-8d46-ca9f8ba6c33f</testCaseGuid>
+</TestCaseEntity>
