@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>user_view_all_category</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>cf21d2a5-56bf-493c-8dde-85af83ced2fc</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>45206c1a-6c74-40db-9814-adc395e3516b</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>45206c1a-6c74-40db-9814-adc395e3516b</id>
+      <masked>false</masked>
+      <name>category_name</name>
+   </variable>
+</TestCaseEntity>
