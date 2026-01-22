@@ -6,11 +6,12 @@
    <UUID>279eb279-1167-43e9-aabf-649c249acefe</UUID>
    <createdEdition>ENTERPRISE</createdEdition>
    <createdVersion>10.4.2</createdVersion>
-   <freeLicense>false</freeLicense>
+   <freeLicense>true</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
    <modifiedEdition>ENTERPRISE</modifiedEdition>
-   <modifiedVersion>10.4.2</modifiedVersion>
+   <modifiedVersion>10.4.3</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
+   <projectFileLocation>C:\Users\Lenovo\Katalon Studio\_katalon-finalweb-ridhaakbari\finalAdvShop.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>
