@@ -17,6 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('page/main/home_page_element_visible'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('page/main/home_page_element_visible'), ["category_name":category_name], FailureHandling.STOP_ON_FAILURE)
 
-println(category_name)
+//println(category_name)
+

@@ -18,22 +18,35 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import com.kms.katalon.core.testobject.TestObject
 import org.openqa.selenium.WebElement
+import org.openqa.selenium.By
+import com.kms.katalon.core.webui.driver.DriverFactory
 
 // Buka browser dan navigasi ke URL
 WebUI.openBrowser('')
 WebUI.navigateToUrl('https://advantageonlineshopping.com/')
 
+
+
 // Tangkap semua elemen yang memiliki atribut sesuai category_text_clickable
-import org.openqa.selenium.By
-import com.kms.katalon.core.webui.driver.DriverFactory
-
-
 // Cari semua elemen dengan findTestObject dan WebUI.findWebElements
 TestObject categoryObj = findTestObject('Object Repository/category_text_clickable')
 List<WebElement> categoryElements = WebUI.findWebElements(categoryObj, 10) as List<WebElement>
 
-// Print setiap text dari elemen yang ditemukan
+// Ambil parameter category_name dari test case pemanggil
+String category_name = category_name
+
+// Print dan cocokan dengan category_name
+boolean found = false
 for (WebElement el : categoryElements) {
-	println(el.getText())
+	String text = el.getText()
+	if (text.equalsIgnoreCase(category_name)) {
+		println("MATCH: " + text)
+		found = true
+	} else {
+		println("NO MATCH: " + text)
+	}
 }
+
+// Jika tidak ditemukan match, testcase fail
+assert found : "Category '" + category_name + "' tidak ditemukan di halaman!"
 
