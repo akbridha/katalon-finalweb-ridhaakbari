@@ -1,0 +1,83 @@
+<!-- container product -->
+<img id="16" alt="" class="imgProduct" data-ng-class="{ outOfStock : product.productStatus == 'OutOfStock' } " data-ng-src="/catalog/fetchImage?image_id=3100" src="/catalog/fetchImage?image_id=3100">
+
+
+<!-- button add to cart  -->
+ <button name="save_to_cart" class="roboto-medium ng-scope" role="button" data-ng-class="{ disable : product.productStatus == &quot;OutOfStock&quot; } " translate="ADD_TO_CART" data-ng-click="addToCart(product.productStatus == 'OutOfStock')">ADD TO CART</button>
+
+<!-- modal Pop up cart -->
+<tool-tip-cart id="toolTipCart" style="display: block; height: 205px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;"><div>
+    <div ng-hide="cart.productsInCart.length &gt; 0" class="emptyCart ng-hide" data-ng-click="redirect('/shoppingCart')" style="">
+        <label class="center items roboto-bold ng-binding"> ITEMS
+            <span class="roboto-regular">(0)</span>
+        </label>
+        <label class="center roboto-medium ng-scope" translate="Your_shopping_cart_is_empty">Your shopping cart is empty</label>
+    </div>
+    <table ng-show="cart.productsInCart.length &gt; 0" class="" style="">
+        <tbody style="height: 104px; overflow-y: hidden;">
+            <!-- ngRepeat: product in cart.productsInCart track by $index --><tr ng-repeat="product in cart.productsInCart track by $index" id="product" data-ng-class="{ lastProduct : $last }" class="ng-scope lastProduct" style="">
+                <td>
+                    <a href="#/product/16?color=414141&amp;quantity=5&amp;pageState=edit">
+                        <img class="imageUrl" ng-src="/catalog/fetchImage?image_id=3100" alt="imgProduct" src="/catalog/fetchImage?image_id=3100">
+                    </a>
+                </td>
+                <td>
+                    <a href="#/product/16?color=414141&amp;quantity=5&amp;pageState=edit">
+                        <h3 class="ng-binding">HP ELITEPAD 1000 G2 TABLET</h3>
+                        <label class="ng-binding">QTY: 5</label>
+                        <label class="ng-binding">Color:
+                            <span class="ng-binding">BLUE</span>
+                        </label>
+                    </a>
+                </td>
+                <td>
+                    <p class="price roboto-regular ng-binding">$5,045.00</p>
+                    <div class="closeDiv" ng-click="removeProduct($index, $event)">
+                        <div icon-x="" class="removeProduct iconCss iconX"></div>
+                    </div>
+                </td>
+            </tr><!-- end ngRepeat: product in cart.productsInCart track by $index -->
+        </tbody>
+        <tfoot data-ng-click="redirect('/shoppingCart')">
+            <tr>
+                <td colspan="2">
+                    <span class="roboto-medium ng-binding">TOTAL
+                        <label class="roboto-regular ng-binding">(5 Items)</label>
+                    </span>
+                </td>
+                <td>
+                    <span class="roboto-medium cart-total ng-binding">$5,045.00</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button id="checkOutPopUp" name="check_out_btn" role="button" class="roboto-medium ng-binding" data-ng-click="checkout($event)">CHECKOUT  ($5,045.00)</button>
+                </td>
+            </tr>
+        </tfoot>
+
+    </table>
+    </div>
+</tool-tip-cart>
+
+
+<!-- button cart navabar -->
+<a id="shoppingCartLink" aria-label="ShoppingCart" class="img" href="#/shoppingCart" role="link">
+                    <svg id="menuCart" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve" icon-cart-svg="">
+    <path fill="#313131" d="M9,20c-1.1,0-2,0.9-2,2c0,1.1,0.9,2,2,2c1.1,0,2-0.9,2-2C11,20.9,10.1,20,9,20z M19,20c-1.1,0-2,0.9-2,2
+        c0,1.1,0.9,2,2,2s2-0.9,2-2C21,20.9,20.1,20,19,20z M8.3,15h12.5L24,4H5.5L4.8,1H0v2h3.2l4,16H21v-2H8.8L8.3,15z M6,6h15.3l-2,7
+        H7.8L6,6z"></path>
+</svg>
+                    <span class="cart ng-binding" ng-show="(cart | productsCartCount) &gt; 0" style="">5</span>
+                </a>
+
+
+                <!-- aksi item di cart -->
+                 <span class="actions">
+                            <a class="edit ng-scope" href="#/product/16?color=414141&amp;quantity=5&amp;pageState=edit&amp;warranty=" translate="EDIT">EDIT</a>
+                            <a class="separator">|</a>
+                            <a class="remove red ng-scope" data-ng-click="removeProduct($index)" translate="REMOVE">REMOVE</a>
+                        </span>
+
+                        <!-- button checkout di cart page -->
+                         <button role="button" class="roboto-medium tami uft-class ng-binding" data-ng-click="checkout()" id="checkOutButton" name="check_out_btn">CHECKOUT ($5,045.00)</button>
